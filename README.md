@@ -3,7 +3,7 @@
 PEAK inside Minecraft. Climb PEAK's real island of the day, exported from your own copy of PEAK, with PEAK's
 rules: its stamina and climbing, its statuses, its items, its fog, its campfires and its ending.
 
-![Today's island, from above the Shore](docs/shore.jpg)
+![The Caldera's temple and the volcano, in the evening](docs/temple.jpg)
 
 ## What it does
 
@@ -33,8 +33,8 @@ The same spots in PEAK (left) and in MinePeak (right):
 
 | | |
 |---|---|
-| ![The Mesa at sunset](docs/mesa_sunset.jpg) | ![The Caldera's temple](docs/temple.jpg) |
-| ![Up from the Shore to the Tropics](docs/tropics_cliffs.jpg) | ![Into the Caldera](docs/caldera_spires.jpg) |
+| ![The Mesa at sunset](docs/mesa_sunset.jpg) | ![Light through the jungle](docs/sun_rays.jpg) |
+| ![A suitcase on the shore](docs/suitcase.jpg) | ![Into the Caldera](docs/caldera_spires.jpg) |
 
 *MinePeak's pictures were taken with Iris and the Complementary Unbound shaders, which aren't part of MinePeak.*
 
@@ -78,6 +78,10 @@ single-player world (Essential, World Host; e4mc works through Open to LAN). Eve
 island comes from the host's world; each player's own PEAK export gives them PEAK's pictures and sounds (without one,
 they see Minecraft's in their place). Carrying, feeding a friend, statues, campfires (every scout must be there), the
 Scoutmaster and badges work for every scout.
+
+## Support
+
+MinePeak is free. If you enjoy it, you can support its maker on [Ko-fi](https://ko-fi.com/chairsoftware).
 
 ## Credits
 
