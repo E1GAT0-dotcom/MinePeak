@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/tripwire_hook",
+  "textures": {
+    "particle": "minecraft:block/exposed_copper",
+    "wood": "minecraft:block/exposed_copper",
+    "hook": "minecraft:block/tripwire_hook"
+  }
+}

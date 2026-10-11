@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:paper",
+      "components": {
+        "minecraft:item_model": "minepeak:badge/naturalist"
+      }
+    },
+    "title": {
+      "translate": "badge.minepeak.naturalist",
+      "fallback": "Naturalist"
+    },
+    "description": {
+      "translate": "badge.minepeak.naturalist.desc",
+      "fallback": "Get to the top without eating packaged food."
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "minepeak:badges/root",
+  "criteria": {
+    "earned": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

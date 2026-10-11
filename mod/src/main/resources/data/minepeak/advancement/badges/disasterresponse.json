@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:paper",
+      "components": {
+        "minecraft:item_model": "minepeak:badge/disasterresponse"
+      }
+    },
+    "title": {
+      "translate": "badge.minepeak.disasterresponse",
+      "fallback": "Disaster Response"
+    },
+    "description": {
+      "translate": "badge.minepeak.disasterresponse.desc",
+      "fallback": "Drag a friend who passed out 30 blocks with the rescue claw."
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "minepeak:badges/root",
+  "criteria": {
+    "earned": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

@@ -1,0 +1,72 @@
+name: Bug report
+description: Something in MinePeak doesn't work, crashes, or isn't how PEAK does it.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting! Please search the [open issues](https://github.com/E1GAT0-dotcom/MinePeak/issues) first, in case it's already known.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What went wrong, and what you expected instead (if it's about PEAK's rules, what PEAK does).
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: How to make it happen
+      description: The steps, as exactly as you can (where on the island, which item, single-player or multiplayer...).
+      placeholder: |
+        1. Start a new world
+        2. Climb to the Alpine campfire
+        3. ...
+    validations:
+      required: true
+  - type: dropdown
+    id: where
+    attributes:
+      label: Where does it happen?
+      options:
+        - In a MinePeak world (playing)
+        - Making a world / exporting the island
+        - The installer (MinePeak Exporter)
+        - The title screen or menus
+        - Multiplayer only
+        - Somewhere else
+    validations:
+      required: true
+  - type: input
+    id: minepeak
+    attributes:
+      label: MinePeak version
+      placeholder: "0.1.0"
+    validations:
+      required: true
+  - type: input
+    id: versions
+    attributes:
+      label: Minecraft, Fabric Loader and Fabric API versions
+      placeholder: "26.2, Fabric Loader 0.19.3, Fabric API 0.156.0+26.2"
+    validations:
+      required: true
+  - type: textarea
+    id: mods
+    attributes:
+      label: Other mods
+      description: Any other mods you have installed (Sodium, Iris, shaders, Essential...). "None" is fine.
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: |
+        Drag the files in here:
+        - Minecraft's `logs/latest.log` (and the crash report from `crash-reports/`, if it crashed)
+        - for export problems, the PEAK copy's `Player-export.log` and `BepInEx/MinePeakData/export.log`
+          (the copy is in `%LOCALAPPDATA%\MinePeak\PEAK`)
+  - type: textarea
+    id: pictures
+    attributes:
+      label: Screenshots or video
+      description: Optional, but they help a lot.

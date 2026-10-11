@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:paper",
+      "components": {
+        "minecraft:item_model": "minepeak:badge/competitiveeating"
+      }
+    },
+    "title": {
+      "translate": "badge.minepeak.competitiveeating",
+      "fallback": "Competitive Eating"
+    },
+    "description": {
+      "translate": "badge.minepeak.competitiveeating.desc",
+      "fallback": "Eat three hot dogs in five seconds."
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "minepeak:badges/root",
+  "criteria": {
+    "earned": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

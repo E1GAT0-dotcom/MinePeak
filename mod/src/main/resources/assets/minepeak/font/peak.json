@@ -1,0 +1,19 @@
+{
+  "providers": [
+    {
+      "type": "ttf",
+      "file": "minepeak:darumadrop_one.ttf",
+      "size": 10.0,
+      "oversample": 4.0,
+      "shift": [
+        0,
+        0.5
+      ],
+      "skip": ""
+    },
+    {
+      "type": "reference",
+      "id": "minecraft:default"
+    }
+  ]
+}

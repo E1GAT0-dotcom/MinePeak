@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:paper",
+      "components": {
+        "minecraft:item_model": "minepeak:badge/beachcomber"
+      }
+    },
+    "title": {
+      "translate": "badge.minepeak.beachcomber",
+      "fallback": "Beachcomber"
+    },
+    "description": {
+      "translate": "badge.minepeak.beachcomber.desc",
+      "fallback": "Climb past the Shore."
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "minepeak:badges/root",
+  "criteria": {
+    "earned": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

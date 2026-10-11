@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:paper",
+      "components": {
+        "minecraft:item_model": "minepeak:badge/jester"
+      }
+    },
+    "title": {
+      "translate": "badge.minepeak.jester",
+      "fallback": "Jester"
+    },
+    "description": {
+      "translate": "badge.minepeak.jester.desc",
+      "fallback": "Open two clown suitcases."
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "minepeak:badges/root",
+  "criteria": {
+    "earned": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

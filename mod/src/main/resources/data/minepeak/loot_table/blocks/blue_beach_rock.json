@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minepeak:blue_beach_rock"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "minepeak:blocks/blue_beach_rock"
+}

@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:paper",
+      "components": {
+        "minecraft:item_model": "minepeak:badge/balloon"
+      }
+    },
+    "title": {
+      "translate": "badge.minepeak.balloon",
+      "fallback": "Light as a Balloon"
+    },
+    "description": {
+      "translate": "badge.minepeak.balloon.desc",
+      "fallback": "Get to the top without hurting yourself in a fall."
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "minepeak:badges/root",
+  "criteria": {
+    "earned": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

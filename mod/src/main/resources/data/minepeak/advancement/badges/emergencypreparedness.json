@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:paper",
+      "components": {
+        "minecraft:item_model": "minepeak:badge/emergencypreparedness"
+      }
+    },
+    "title": {
+      "translate": "badge.minepeak.emergencypreparedness",
+      "fallback": "Emergency Preparedness"
+    },
+    "description": {
+      "translate": "badge.minepeak.emergencypreparedness.desc",
+      "fallback": "Bring round a friend who passed out."
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "minepeak:badges/root",
+  "criteria": {
+    "earned": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

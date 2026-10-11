@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:paper",
+      "components": {
+        "minecraft:item_model": "minepeak:badge/peak"
+      }
+    },
+    "title": {
+      "translate": "badge.minepeak.peak",
+      "fallback": "PEAK"
+    },
+    "description": {
+      "translate": "badge.minepeak.peak.desc",
+      "fallback": "Get to the top, and away."
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "minepeak:badges/root",
+  "criteria": {
+    "earned": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:paper",
+      "components": {
+        "minecraft:item_model": "minepeak:badge/mentorship"
+      }
+    },
+    "title": {
+      "translate": "badge.minepeak.mentorship",
+      "fallback": "Mentorship"
+    },
+    "description": {
+      "translate": "badge.minepeak.mentorship.desc",
+      "fallback": "Meet the Scoutmaster."
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "minepeak:badges/root",
+  "criteria": {
+    "earned": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

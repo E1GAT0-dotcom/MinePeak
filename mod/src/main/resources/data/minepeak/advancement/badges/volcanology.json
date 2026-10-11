@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:paper",
+      "components": {
+        "minecraft:item_model": "minepeak:badge/volcanology"
+      }
+    },
+    "title": {
+      "translate": "badge.minepeak.volcanology",
+      "fallback": "Volcanology"
+    },
+    "description": {
+      "translate": "badge.minepeak.volcanology.desc",
+      "fallback": "Climb past the Caldera."
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "minepeak:badges/root",
+  "criteria": {
+    "earned": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

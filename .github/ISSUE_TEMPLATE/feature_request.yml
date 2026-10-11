@@ -1,0 +1,21 @@
+name: Idea or missing PEAK feature
+description: Something from PEAK that MinePeak doesn't have yet, or an idea to make it better.
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would you like?
+      description: If it's something from PEAK, say how it works in PEAK (a video or a wiki link helps).
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why?
+      description: What it would add to playing MinePeak.
+  - type: textarea
+    id: pictures
+    attributes:
+      label: Pictures, videos or links
+      description: Optional.

@@ -1,0 +1,14 @@
+.gradle/
+build/
+run/
+run2/
+bin/
+obj/
+dist/
+out/
+*.jfr
+*.log
+.idea/
+*.iml
+.vscode/
+__pycache__/

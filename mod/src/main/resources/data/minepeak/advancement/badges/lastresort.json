@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:paper",
+      "components": {
+        "minecraft:item_model": "minepeak:badge/lastresort"
+      }
+    },
+    "title": {
+      "translate": "badge.minepeak.lastresort",
+      "fallback": "Last Resort"
+    },
+    "description": {
+      "translate": "badge.minepeak.lastresort.desc",
+      "fallback": "Be saved by the ritual dagger."
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "minepeak:badges/root",
+  "criteria": {
+    "earned": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

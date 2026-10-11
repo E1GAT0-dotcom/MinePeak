@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:paper",
+      "components": {
+        "minecraft:item_model": "minepeak:badge/megaentomology"
+      }
+    },
+    "title": {
+      "translate": "badge.minepeak.megaentomology",
+      "fallback": "Megaentomology"
+    },
+    "description": {
+      "translate": "badge.minepeak.megaentomology.desc",
+      "fallback": "Get away from an antlion after it bit you."
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "minepeak:badges/root",
+  "criteria": {
+    "earned": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

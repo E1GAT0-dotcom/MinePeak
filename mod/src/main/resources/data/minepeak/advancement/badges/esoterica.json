@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:paper",
+      "components": {
+        "minecraft:item_model": "minepeak:badge/esoterica"
+      }
+    },
+    "title": {
+      "translate": "badge.minepeak.esoterica",
+      "fallback": "Esoterica"
+    },
+    "description": {
+      "translate": "badge.minepeak.esoterica.desc",
+      "fallback": "Pick up something mystical."
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "minepeak:badges/root",
+  "criteria": {
+    "earned": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:paper",
+      "components": {
+        "minecraft:item_model": "minepeak:badge/coolcucumber"
+      }
+    },
+    "title": {
+      "translate": "badge.minepeak.coolcucumber",
+      "fallback": "Cool Cucumber"
+    },
+    "description": {
+      "translate": "badge.minepeak.coolcucumber.desc",
+      "fallback": "Cross the Mesa without getting too hot."
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "minepeak:badges/root",
+  "criteria": {
+    "earned": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

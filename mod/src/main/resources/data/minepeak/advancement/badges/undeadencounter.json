@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:paper",
+      "components": {
+        "minecraft:item_model": "minepeak:badge/undeadencounter"
+      }
+    },
+    "title": {
+      "translate": "badge.minepeak.undeadencounter",
+      "fallback": "Undead Encounter"
+    },
+    "description": {
+      "translate": "badge.minepeak.undeadencounter.desc",
+      "fallback": "Get over a mushroom zombie's bite."
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "minepeak:badges/root",
+  "criteria": {
+    "earned": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

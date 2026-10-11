@@ -1,0 +1,60 @@
+{
+  "attributes": {
+    "minecraft:visual/sky_color": "#b8a2ee",
+    "minecraft:visual/water_fog_color": "#0b5a73",
+    "minecraft:visual/fog_color": "#d6bfe6",
+    "minecraft:visual/fog_start_distance": 10.0,
+    "minecraft:visual/fog_end_distance": 130.0,
+    "minecraft:visual/sky_fog_end_distance": 160.0,
+    "minecraft:visual/cloud_height": 1420.0,
+    "minecraft:visual/sky_light_color": "#efe2ff",
+    "minecraft:visual/ambient_particles": [
+      {
+        "particle": {
+          "type": "minecraft:spore_blossom_air"
+        },
+        "probability": 0.004
+      }
+    ]
+  },
+  "carvers": [],
+  "downfall": 0.4,
+  "effects": {
+    "water_color": "#43d5ee",
+    "grass_color": "#6fae58",
+    "foliage_color": "#4f8f3a"
+  },
+  "features": [],
+  "has_precipitation": false,
+  "spawn_costs": {},
+  "spawners": {
+    "ambient": [],
+    "axolotls": [],
+    "creature": [],
+    "misc": [],
+    "monster": [],
+    "underground_water_creature": [],
+    "water_ambient": [
+      {
+        "type": "minecraft:tropical_fish",
+        "maxCount": 8,
+        "minCount": 4,
+        "weight": 25
+      },
+      {
+        "type": "minecraft:pufferfish",
+        "maxCount": 3,
+        "minCount": 1,
+        "weight": 10
+      },
+      {
+        "type": "minecraft:cod",
+        "maxCount": 6,
+        "minCount": 3,
+        "weight": 8
+      }
+    ],
+    "water_creature": []
+  },
+  "temperature": 2.0
+}

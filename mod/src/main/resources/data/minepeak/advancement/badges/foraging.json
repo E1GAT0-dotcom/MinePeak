@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:paper",
+      "components": {
+        "minecraft:item_model": "minepeak:badge/foraging"
+      }
+    },
+    "title": {
+      "translate": "badge.minepeak.foraging",
+      "fallback": "Foraging"
+    },
+    "description": {
+      "translate": "badge.minepeak.foraging.desc",
+      "fallback": "Eat five kinds of berry."
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "minepeak:badges/root",
+  "criteria": {
+    "earned": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- MinePeak Exporter: a small BepInEx 5 plugin for PEAK that exports the island of the day as Minecraft blocks
+       for MinePeak (and pictures of the airport for its menus' panorama). Builds against MINEPEAK's own PEAK test copy in ..\lab\PEAK and deploys only
+       there; the Steam install and PEAKCRAFT are never referenced or touched. -->
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <AssemblyName>MinePeakExporter</AssemblyName>
+    <RootNamespace>MinePeakExporter</RootNamespace>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    <PeakDir>$(MSBuildThisFileDirectory)..\lab\PEAK</PeakDir>
+    <Managed>$(PeakDir)\PEAK_Data\Managed</Managed>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild" Version="0.4.3" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="BepInEx" Private="false" HintPath="$(PeakDir)\BepInEx\core\BepInEx.dll" />
+    <Reference Include="0Harmony" Private="false" HintPath="$(PeakDir)\BepInEx\core\0Harmony.dll" />
+    <Reference Include="Assembly-CSharp" Private="false" Publicize="true" HintPath="$(Managed)\Assembly-CSharp.dll" />
+    <Reference Include="$(Managed)\*.dll"
+               Exclude="$(Managed)\Assembly-CSharp.dll;$(Managed)\mscorlib.dll;$(Managed)\netstandard.dll;$(Managed)\System*.dll;$(Managed)\Mono.*.dll;$(Managed)\Microsoft*.dll"
+               Private="false" />
+  </ItemGroup>
+
+  <Target Name="DeployToLab" AfterTargets="Build">
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(PeakDir)\BepInEx\plugins\MinePeakExporter" />
+    <Message Importance="high" Text="MinePeakExporter -> $(PeakDir)\BepInEx\plugins\MinePeakExporter" />
+  </Target>
+
+</Project>

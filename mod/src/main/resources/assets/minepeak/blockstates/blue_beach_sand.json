@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "minepeak:block/blue_beach_sand"
+      },
+      {
+        "model": "minepeak:block/blue_beach_sand",
+        "y": 90
+      },
+      {
+        "model": "minepeak:block/blue_beach_sand",
+        "y": 180
+      },
+      {
+        "model": "minepeak:block/blue_beach_sand",
+        "y": 270
+      }
+    ]
+  }
+}

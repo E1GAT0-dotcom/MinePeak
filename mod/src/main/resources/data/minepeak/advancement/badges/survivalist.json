@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:paper",
+      "components": {
+        "minecraft:item_model": "minepeak:badge/survivalist"
+      }
+    },
+    "title": {
+      "translate": "badge.minepeak.survivalist",
+      "fallback": "Survivalist"
+    },
+    "description": {
+      "translate": "badge.minepeak.survivalist.desc",
+      "fallback": "Get to the top without passing out."
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "minepeak:badges/root",
+  "criteria": {
+    "earned": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

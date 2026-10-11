@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:paper",
+      "components": {
+        "minecraft:item_model": "minepeak:badge/triedyourbest"
+      }
+    },
+    "title": {
+      "translate": "badge.minepeak.triedyourbest",
+      "fallback": "Tried Your Best"
+    },
+    "description": {
+      "translate": "badge.minepeak.triedyourbest.desc",
+      "fallback": "A friend got to the top; you didn't."
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "minepeak:badges/root",
+  "criteria": {
+    "earned": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

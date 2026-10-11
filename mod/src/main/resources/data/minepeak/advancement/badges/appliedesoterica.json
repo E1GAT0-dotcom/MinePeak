@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:paper",
+      "components": {
+        "minecraft:item_model": "minepeak:badge/appliedesoterica"
+      }
+    },
+    "title": {
+      "translate": "badge.minepeak.appliedesoterica",
+      "fallback": "Applied Esoterica"
+    },
+    "description": {
+      "translate": "badge.minepeak.appliedesoterica.desc",
+      "fallback": "Bring a friend back with the Book of Bones."
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "minepeak:badges/root",
+  "criteria": {
+    "earned": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

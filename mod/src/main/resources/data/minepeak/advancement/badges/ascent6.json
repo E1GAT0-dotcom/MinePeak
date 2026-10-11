@@ -1,0 +1,18 @@
+{
+  "display": {
+    "icon": {
+      "id": "minepeak:flare"
+    },
+    "title": "Ascent 6",
+    "description": "Get to the top at Ascent 6 or higher.",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "minepeak:badges/root",
+  "criteria": {
+    "earned": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

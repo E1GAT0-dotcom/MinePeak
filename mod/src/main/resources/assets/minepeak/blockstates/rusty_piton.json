@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "minepeak:block/rusty_piton"
+    },
+    "facing=east": {
+      "model": "minepeak:block/rusty_piton",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "minepeak:block/rusty_piton",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "minepeak:block/rusty_piton",
+      "y": 270
+    }
+  }
+}

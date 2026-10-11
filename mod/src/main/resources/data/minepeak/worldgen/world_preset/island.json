@@ -1,0 +1,49 @@
+{
+  "dimensions": {
+    "minecraft:overworld": {
+      "type": "minepeak:island",
+      "generator": {
+        "type": "minepeak:island",
+        "biome_source": {
+          "type": "minepeak:stages",
+          "sea": "minepeak:island",
+          "stages": {
+            "shore": "minepeak:shore",
+            "tropics": "minepeak:tropics",
+            "roots": "minepeak:roots",
+            "alpine": "minepeak:alpine",
+            "mesa": "minepeak:mesa",
+            "caldera": "minepeak:caldera",
+            "kiln": "minepeak:kiln",
+            "peak": "minepeak:peak"
+          }
+        },
+        "island": "latest",
+        "area": "island",
+        "start": "bottom",
+        "edges": "barrier"
+      }
+    },
+    "minecraft:the_end": {
+      "type": "minecraft:the_end",
+      "generator": {
+        "type": "minecraft:noise",
+        "biome_source": {
+          "type": "minecraft:the_end"
+        },
+        "settings": "minecraft:end"
+      }
+    },
+    "minecraft:the_nether": {
+      "type": "minecraft:the_nether",
+      "generator": {
+        "type": "minecraft:noise",
+        "biome_source": {
+          "type": "minecraft:multi_noise",
+          "preset": "minecraft:nether"
+        },
+        "settings": "minecraft:nether"
+      }
+    }
+  }
+}

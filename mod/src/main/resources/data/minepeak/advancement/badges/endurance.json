@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:paper",
+      "components": {
+        "minecraft:item_model": "minepeak:badge/endurance"
+      }
+    },
+    "title": {
+      "translate": "badge.minepeak.endurance",
+      "fallback": "Endurance"
+    },
+    "description": {
+      "translate": "badge.minepeak.endurance.desc",
+      "fallback": "Climb 50 blocks without touching the ground."
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "minepeak:badges/root",
+  "criteria": {
+    "earned": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}
