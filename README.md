@@ -5,6 +5,12 @@ rules: its stamina and climbing, its statuses, its items, its fog, its campfires
 
 ![The Caldera's temple and the volcano, in the evening](docs/temple.jpg)
 
+## Download
+
+- **MinePeak Exporter** (needed: it exports PEAK's island from your PEAK):
+  **[⬇️ Download MinePeakExporter.zip](https://github.com/E1GAT0-dotcom/MinePeak/releases/latest/download/MinePeakExporter.zip)**
+- **MinePeak**, the mod: from the [latest release](https://github.com/E1GAT0-dotcom/MinePeak/releases/latest)
+
 ## What it does
 
 - **Today's island.** PEAK's daily island (the Shore, the Tropics or the Roots, the Alpine or the Mesa, the Caldera, the
@@ -48,7 +54,7 @@ The same spots in PEAK (left) and in MinePeak (right):
 ## Install
 
 1. Put `minepeak-<version>.jar` and Fabric API in your Minecraft `mods` folder.
-2. Download `MinePeakExporter-<version>.zip` from [Releases](https://github.com/E1GAT0-dotcom/MinePeak/releases/latest),
+2. Download [MinePeakExporter.zip](https://github.com/E1GAT0-dotcom/MinePeak/releases/latest/download/MinePeakExporter.zip),
    unzip it anywhere and double-click **Install MinePeak Exporter.cmd**. It copies your
    Steam PEAK to `%LOCALAPPDATA%\MinePeak\PEAK` (about 2 GB; your Steam PEAK is only read, never changed, and mods in it
    aren't copied), installs BepInEx 5 in the copy (it asks before downloading BepInExPack_PEAK from Thunderstore), and
