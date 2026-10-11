@@ -11,6 +11,8 @@ rules: its stamina and climbing, its statuses, its items, its fog, its campfires
   **[⬇️ Download MinePeakExporter.zip](https://github.com/E1GAT0-dotcom/MinePeak/releases/latest/download/MinePeakExporter.zip)**
 - **MinePeak**, the mod: from the [latest release](https://github.com/E1GAT0-dotcom/MinePeak/releases/latest)
 
+**💬 [Join the MinePeak Discord](https://discord.gg/URP6bwCxvv)**: help, ideas, screenshots, and people to climb with.
+
 ## What it does
 
 - **Today's island.** PEAK's daily island (the Shore, the Tropics or the Roots, the Alpine or the Mesa, the Caldera, the
@@ -76,6 +78,7 @@ own PEAK, into `%APPDATA%/MinePeak`. Nothing of PEAK's ships with MinePeak.
 - Minecraft's own log: `logs/latest.log` (MinePeak's lines start with "MinePeak").
 - Found a bug, or something that isn't how PEAK does it? [Open an issue](https://github.com/E1GAT0-dotcom/MinePeak/issues)
   (with those logs, if you can).
+- Stuck? Ask in the [Discord](https://discord.gg/URP6bwCxvv)'s questions forum.
 
 ## Multiplayer
 

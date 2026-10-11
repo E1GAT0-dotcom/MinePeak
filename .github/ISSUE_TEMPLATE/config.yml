@@ -1,1 +1,5 @@
 blank_issues_enabled: true
+contact_links:
+  - name: Questions and help
+    url: https://discord.gg/URP6bwCxvv
+    about: Ask in the MinePeak Discord's questions forum.
