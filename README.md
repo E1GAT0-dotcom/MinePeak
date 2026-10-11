@@ -48,7 +48,8 @@ The same spots in PEAK (left) and in MinePeak (right):
 ## Install
 
 1. Put `minepeak-<version>.jar` and Fabric API in your Minecraft `mods` folder.
-2. Unzip `MinePeakExporter-<version>.zip` anywhere and double-click **Install MinePeak Exporter.cmd**. It copies your
+2. Download `MinePeakExporter-<version>.zip` from [Releases](https://github.com/E1GAT0-dotcom/MinePeak/releases/latest),
+   unzip it anywhere and double-click **Install MinePeak Exporter.cmd**. It copies your
    Steam PEAK to `%LOCALAPPDATA%\MinePeak\PEAK` (about 2 GB; your Steam PEAK is only read, never changed, and mods in it
    aren't copied), installs BepInEx 5 in the copy (it asks before downloading BepInExPack_PEAK from Thunderstore), and
    puts the exporter in it. MinePeak finds the copy by itself.
