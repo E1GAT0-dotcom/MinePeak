@@ -13,6 +13,8 @@ rules: its stamina and climbing, its statuses, its items, its fog, its campfires
 
 **💬 [Join the MinePeak Discord](https://discord.gg/URP6bwCxvv)**: help, ideas, screenshots, and people to climb with.
 
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/A1G628KF3B)
+
 ## What it does
 
 - **Today's island.** PEAK's daily island (the Shore, the Tropics or the Roots, the Alpine or the Mesa, the Caldera, the
@@ -92,6 +94,8 @@ Scoutmaster and badges work for every scout.
 ## Support
 
 MinePeak is free. If you enjoy it, you can support its maker on [Ko-fi](https://ko-fi.com/chairsoftware).
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/A1G628KF3B)
 
 ## Credits
 
