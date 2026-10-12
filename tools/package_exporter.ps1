@@ -1,5 +1,6 @@
-# Packages the MinePeak Exporter for release: dist\MinePeakExporter-<version>.zip (and a copy, MinePeakExporter.zip) with the installer (install.ps1,
-# "Install MinePeak Exporter.cmd", README.txt) and MinePeakExporter.dll (built from ..\exporter, Release).
+# Packages the MinePeak Exporter for release: dist\MinePeakExporter-<version>.zip (and a copy, MinePeakExporter.zip)
+# with the installer (install.ps1, "Install MinePeak Exporter.cmd", README.txt) and MinePeakExporter.dll (built from
+# ..\exporter, Release).
 # Nothing of PEAK's or BepInEx's goes in it: the installer copies the player's own PEAK and fetches BepInEx itself.
 param([string]$Version = "0.1.0")
 $ErrorActionPreference = "Stop"
