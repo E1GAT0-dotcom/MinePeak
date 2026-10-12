@@ -73,7 +73,15 @@ namespace MinePeakExporter
         }
 
         public const int YOffset = 63, MinY = -64, MaxY = 1343;
-        public static string Root => Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "MinePeak", "islands");
+        public static string Root => RootArg() ?? Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "MinePeak", "islands");
+
+        /// <summary>-minepeak-root &lt;folder&gt;: the islands go there instead (tests: a scratch folder, not the player's).</summary>
+        static string RootArg()
+        {
+            var args = Environment.GetCommandLineArgs();
+            int i = Array.FindIndex(args, a => a.Equals("-minepeak-root", StringComparison.OrdinalIgnoreCase));
+            return i >= 0 && i + 1 < args.Length ? args[i + 1] : null;
+        }
 
         static readonly List<string> Palette = new List<string> { "minecraft:air" };
         static readonly Dictionary<string, int> PaletteIndex = new Dictionary<string, int> { ["minecraft:air"] = 0 };
@@ -412,7 +420,7 @@ namespace MinePeakExporter
                     {
                         float near = UndersideNear(c, ux, uz, y, yLo);
                         bottom = !float.IsNaN(near) ? near : !IsGround(h) ? y - 3f
-                            : c.gameObject.layer == TerrainLayer ? bottomOfWorld : Mathf.Max(bottomOfWorld, c.bounds.min.y - 0.5f);
+                            : c.gameObject.layer == TerrainLayer && !Floating(c) ? bottomOfWorld : Mathf.Max(bottomOfWorld, c.bounds.min.y - 0.5f);
                         if (!float.IsNaN(near)) RimsMended++;
                     }
                     Intervals.Add((y, bottom, h));
@@ -424,7 +432,7 @@ namespace MinePeakExporter
                 if (lowest >= 0)
                 {
                     var l = Intervals[lowest];
-                    if (l.bottom > bottomOfWorld && (l.top - l.bottom >= 4f && l.bottom <= yLo + 30f || CalderaFloor(l.hit.collider)) && IsGround(l.hit) && !Shell(l.hit.collider))
+                    if (l.bottom > bottomOfWorld && (l.top - l.bottom >= 4f && l.bottom <= yLo + 30f || CalderaFloor(l.hit.collider)) && IsGround(l.hit) && !Shell(l.hit.collider) && !Floating(l.hit.collider))
                         Intervals[lowest] = (l.top, bottomOfWorld, l.hit);
                 }
                 // painted from the lowest top up, so where pieces overlap the higher one's blocks show; the shapes scanned
@@ -444,6 +452,17 @@ namespace MinePeakExporter
                         }
                 }
                 foreach (var iv in Intervals) Paint(ux, uz, iv.top, iv.bottom, iv.hit, ref lo, ref hi);
+                // upright walls the scan slid past (the Gloom temple's hall): where there's air
+                var walls = UprightWalls.At(ux, uz);
+                if (walls != null)
+                    foreach (var kv in walls)
+                    {
+                        int i = kv.Key - (MinY - YOffset);
+                        if (i < 0 || i >= Cells.Length || Cells[i] != 0) continue;
+                        Cells[i] = kv.Value;
+                        if (i > hi) hi = i;
+                        if (i < lo) lo = i;
+                    }
                 // a lake of lava (the Caldera's, PEAK's a sheet over nothing): rock under it, down to the world's bottom. Only
                 // where its lava is (the Caldera river's collider is a box far wider than its lava, reaching under the
                 // volcano: there, under nothing drawn, this had filled a quarter of the volcano solid, from its skin down)
@@ -499,6 +518,21 @@ namespace MinePeakExporter
         }
 
         static int TerrainLayer => LayerMask.NameToLayer("Terrain");
+        static readonly Dictionary<int, bool> FloatingCache = new Dictionary<int, bool>();
+
+        /// <summary>
+        /// Building in the air, though PEAK has it on the Terrain layer: the Gloom's temple (the Citadel stands on nothing),
+        /// whose ring floors (the atrium, 165 m across, the exit, the statues' ring) had gone on down to the world's bottom
+        /// as ground does, hollow cylinders hundreds of blocks tall round the tower. Down to its own bottom instead.
+        /// </summary>
+        static bool Floating(Collider c)
+        {
+            if (c == null) return false;
+            int id = c.GetInstanceID();
+            if (FloatingCache.TryGetValue(id, out bool f)) return f;
+            return FloatingCache[id] = TPath(c.transform).Contains("/Gloom/Temple_Segment/");
+        }
+
         internal static int RimsMended;
         static readonly float[] ProbeX = { 1f, -1f, 0f, 0f, 2f, -2f, 0f, 0f }, ProbeZ = { 0f, 0f, 1f, -1f, 0f, 0f, 2f, -2f };
         static readonly List<float> Found = new List<float>();
@@ -1085,7 +1119,7 @@ namespace MinePeakExporter
             public Job()
             {
                 Palette.Clear(); PaletteIndex.Clear(); Cache.Clear(); InvisibleCache.Clear(); Invisibles.Clear(); TopCount.Clear(); HazardCache.Clear(); Ground.Clear();
-                SkipCache.Clear(); Plants.Clear(); TopColours.Clear(); PlantsSeen.Clear(); Drawn.Clear();
+                SkipCache.Clear(); Plants.Clear(); TopColours.Clear(); PlantsSeen.Clear(); Drawn.Clear(); FloatingCache.Clear();
                 Palette.Add("minecraft:air"); PaletteIndex["minecraft:air"] = 0;
                 RimsMended = 0; UnderTries.Clear(); ColumnErrors = 0; Falls = new JArray(); FloorCache.Clear(); PeakZ = null;
                 Dir = Path.Combine(Root, "exporting_" + DateTime.Now.ToString("yyyyMMdd_HHmmss"));
@@ -1130,6 +1164,7 @@ namespace MinePeakExporter
                 foreach (var lr in UnityEngine.Object.FindObjectsByType<LavaRising>(FindObjectsSortMode.None))
                     foreach (var lc in lr.GetComponentsInChildren<Collider>()) LavaTop = float.IsNaN(LavaTop) ? lc.bounds.max.y : Mathf.Max(LavaTop, lc.bounds.max.y);
                 Sideways.Prepare(b, log);
+                UprightWalls.Prepare(b, h => BlocksFor(h).side, log);
                 ShellColumns.Clear(); TunnelSides.Clear(); TunnelAir.Clear(); Skins.Clear();
                 yield return Scan(a, b, log, SolidMask);
                 float tc = Time.realtimeSinceStartup;
@@ -1147,6 +1182,7 @@ namespace MinePeakExporter
                 if (floors > 0) log($"  under the volcano: {floors} columns (its lava floor, rock under its shell)");
                 TopColours.Clear();
                 Sideways.Clear();
+                UprightWalls.Clear();
                 var (pillars, gaps) = Clean.Area(a, IsGroundBlock, blk => Palette[blk].Contains("water") || Palette[blk].Contains("lava"));
                 // after the clean-up (it thinned the skin where steep): the tunnel's walls again, and the skin whole
                 TunnelWalls(a);

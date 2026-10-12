@@ -160,6 +160,29 @@ namespace MinePeakExporter
             }
             if (index == 2) Shoot("mesa_streaks", Peak(-142f, 700f, -1180f), 0f, 10f);
             if (index == 3) { Shoot("volcano_entrance", Peak(5f, 960f, -1900f), 0f, 5f); }
+            if (index == 4 && parent != null && TPath(parent.transform).Contains("Gloom"))
+            {
+                // the Gloom's temple ("the walls are missing and you can see the empty shell"): what's drawn there, big, and
+                // whether the export can see it (a collider, of what kind); then columns down through its entrance, and pictures
+                var drawn = new JArray();
+                foreach (var g in rs.Where(r => r.bounds.size.magnitude > 6f)
+                    .GroupBy(r => Kind(r.gameObject.name) + " | " + r.sharedMaterial?.name).OrderByDescending(g => g.Sum(r => r.bounds.size.magnitude)).Take(120))
+                {
+                    var r = g.First();
+                    var cols = r.GetComponents<Collider>().Concat(r.GetComponentsInChildren<Collider>()).Distinct().ToList();
+                    string cs = cols.Count == 0 ? "NO COLLIDER" : string.Join(", ", cols.Take(3).Select(c => $"{c.GetType().Name}{(c is MeshCollider mc && mc.convex ? " convex" : "")}{(c.isTrigger ? " trigger" : "")}{(c.enabled ? "" : " off")} [{LayerMask.LayerToName(c.gameObject.layer)}]"));
+                    drawn.Add($"{g.Count()} x {g.Key} [{LayerMask.LayerToName(r.gameObject.layer)}] size {r.bounds.size:F0} e.g. {r.bounds.min:F0}..{r.bounds.max:F0}: {cs} ({TPath(r.transform)})");
+                }
+                o["gloomTempleDrawn"] = drawn;
+                var cj = new JObject();
+                for (float z = -1985f; z >= -2125f; z -= 10f)
+                    cj[$"x6 z{z}"] = new JArray(Physics.RaycastAll(Peak(6.5f, 1500f, z), Vector3.down, 1000f, ~0, QueryTriggerInteraction.Ignore).OrderByDescending(h => h.point.y).Take(25).Select(h => Hit(h)));
+                o["gloomTempleColumns"] = cj;
+                Shoot("gloom_entrance_low", Peak(6.5f, 875f, -1992f), 0f, -25f);
+                Shoot("gloom_entrance_far", Peak(6.5f, 895f, -1945f), 0f, -10f);
+                Shoot("gloom_entrance_side", Peak(-45f, 890f, -1990f), 40f, -10f);
+                Shoot("gloom_inside", Peak(6.5f, 880f, -2040f), 0f, -15f);
+            }
             if (index == 4)
             {
                 for (int yaw = 0; yaw < 360; yaw += 90) Shoot($"kiln_inside_{yaw}", Peak(5f, 1000f, -2150f), yaw, 0f);
